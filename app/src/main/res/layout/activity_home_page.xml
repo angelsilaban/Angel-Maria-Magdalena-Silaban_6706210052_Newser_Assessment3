@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity">
+
+<!--    Icon beranda-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_roundhomeblack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    button search-->
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/buttonsearch"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    icon search-->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/icon_search"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    text-Terbaru-->
+    <TextView
+        android:id="@+id/text_terbaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/playfairdisplayextrabold"
+        android:text="Terbaru"
+        android:textColor="@color/background_color"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    text-berita Utama-->
+    <TextView
+        android:id="@+id/text_beritautama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/playfairdisplaysemibold"
+        android:text="Berita Utama"
+        android:textColor="@color/background_color"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_terbaru"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    text-bisnis-->
+    <TextView
+        android:id="@+id/text_bisnis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/playfairdisplaysemibold"
+        android:text="Bisnis"
+        android:textColor="@color/background_color"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_beritautama"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    text-kesehatan-->
+    <TextView
+        android:id="@+id/text_kesehatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/playfairdisplaysemibold"
+        android:text="Kesehatan"
+        android:textColor="@color/background_color"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/text_bisnis"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    berita bapak sandiaga-->
+    <ImageButton
+        android:id="@+id/image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/image_beritaprabowo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_terbaru" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/kotaktulisanutama"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/playfairdisplayextrabold"
+        android:text="Sandiaga Duduk Sebelah Prabowo di Istana, \n Janjian Ketemu Lagi"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Newser - beberapa detik yang lalu"
+        android:textColor="@color/white"
+        android:textSize="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"/>
+
+<!--    berita-narkoba-->
+    <ImageButton
+        android:id="@+id/image_narkoba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/image_narkoba"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/text_narkoba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Polisi tangkap 21  tersangka narkoba \ndi Bogor, sabu hingga 0bat keras disita."
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_narkoba"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="168dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Newser - 12 jam yang lalu"
+        android:textColor="@color/black"
+        android:textSize="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_narkoba"
+        app:layout_constraintTop_toBottomOf="@+id/text_narkoba" />
+
+<!--    berita-pulau-->
+    <ImageButton
+        android:id="@+id/image_pulau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/image_pulau"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_narkoba" />
+
+    <TextView
+        android:id="@+id/text_pulau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Salah satu pulau terpadat di dunia \nternyata milik Indonesia."
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_pulau"
+        app:layout_constraintTop_toBottomOf="@+id/text_narkoba" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Newser - 16 jam yang lalu"
+        android:textColor="@color/black"
+        android:textSize="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_pulau"
+        app:layout_constraintTop_toBottomOf="@+id/text_pulau" />
+
+<!--    berita-tesla-->
+    <ImageButton
+        android:id="@+id/image_tesla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/image_tesla"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_pulau" />
+
+    <TextView
+        android:id="@+id/text_tesla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Tesla Cybertruck belum meluncur, \nkaum tajir Indonesia sudah antre \nmau beli."
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_tesla"
+        app:layout_constraintTop_toBottomOf="@+id/text_pulau" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
+        android:fontFamily="@font/playfairdisplayregular"
+        android:text="Newser - 18 jam yang lalu"
+        android:textColor="@color/black"
+        android:textSize="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_tesla"
+        app:layout_constraintTop_toBottomOf="@+id/text_tesla" />
+
+<!--    komponen-->
+    <ImageView
+        android:id="@+id/kotak_komponen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/kotakkomponen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ic_beranda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/icroundhomegray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kotak_komponen" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_like_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kotak_komponen" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/icon_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kotak_komponen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
