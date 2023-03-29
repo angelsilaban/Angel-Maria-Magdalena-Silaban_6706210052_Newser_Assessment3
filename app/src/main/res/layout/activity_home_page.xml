@@ -170,15 +170,19 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/recycleViewListBerita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
-                android:layout_marginBottom="150dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cardViewKepalaBerita" />
+                tools:listitem="@layout/activity_list_berita"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewKepalaBerita"
+                tools:context=".MainActivity"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
