@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewGambarBerita1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image_narkoba"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/image_narkoba"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_narkoba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/playfairdisplayregular"
+                android:text="Polisi tangkap 21  tersangka narkoba \ndi Bogor, sabu hingga 0bat keras disita."
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardViewGambarBerita1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="168dp"
+                android:fontFamily="@font/playfairdisplayregular"
+                android:text="Newser - 12 jam yang lalu"
+                android:textColor="@color/black"
+                android:textSize="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_narkoba"
+                app:layout_constraintTop_toBottomOf="@+id/text_narkoba" />
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cardViewGambarBerita2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:cardCornerRadius="10dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/image_pulau"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="40dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:background="@drawable/image_pulau"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/image_narkoba" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
+
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/text_pulau"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="56dp"-->
+    <!--            android:fontFamily="@font/playfairdisplayregular"-->
+    <!--            android:text="Salah satu pulau terpadat di dunia \nternyata milik Indonesia."-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="12dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/image_pulau"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/text_narkoba" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:layout_marginEnd="160dp"-->
+    <!--            android:fontFamily="@font/playfairdisplayregular"-->
+    <!--            android:text="Newser - 16 jam yang lalu"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="5dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="@+id/text_pulau"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/text_pulau" />-->
+
+    <!--        &lt;!&ndash;berita-tesla&ndash;&gt;-->
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/image_tesla"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="40dp"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            android:background="@drawable/image_tesla"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/image_pulau" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/text_tesla"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="45dp"-->
+    <!--            android:fontFamily="@font/playfairdisplayregular"-->
+    <!--            android:text="Tesla Cybertruck belum meluncur, \nkaum tajir Indonesia sudah antre \nmau beli."-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="12dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/image_tesla"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/text_pulau" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/textView7"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:layout_marginEnd="160dp"-->
+    <!--            android:fontFamily="@font/playfairdisplayregular"-->
+    <!--            android:text="Newser - 18 jam yang lalu"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="5dp"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="@+id/text_tesla"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/text_tesla" />-->
