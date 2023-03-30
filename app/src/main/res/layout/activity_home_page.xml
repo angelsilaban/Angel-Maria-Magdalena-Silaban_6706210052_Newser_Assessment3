@@ -6,56 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".HomePageActivity">
 
-    <!--Icon beranda-->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+    <!--search-->
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/ic_roundhomeblack"
+        android:layout_marginTop="20dp"
+        android:queryHint="Telusuri"
+        android:iconifiedByDefault="false"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/searchview_background"/>
 
-    <!--button search-->
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="26dp"
-        android:background="@drawable/buttonsearch"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--icon search-->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/icon_search"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--menu top-->
     <LinearLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/search">
 
         <!--text-Terbaru-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/playfairdisplayextrabold"
             android:text="Terbaru"
             android:textColor="@color/background_color"
@@ -68,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Berita Utama"
             android:textColor="@color/background_color"
@@ -81,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Bisnis"
             android:textColor="@color/background_color"
@@ -94,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Kesehatan"
             android:textColor="@color/background_color"
@@ -107,7 +87,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
