@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:queryHint="Telusuri"
+        android:background="@drawable/searchview_background"
         android:iconifiedByDefault="false"
+        android:queryHint="Telusuri"
         app:layout_constraintBottom_toTopOf="@+id/menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/searchview_background"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/menu"
@@ -39,7 +39,7 @@
             android:fontFamily="@font/playfairdisplayextrabold"
             android:text="Terbaru"
             android:textColor="@color/background_color"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +52,7 @@
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Berita Utama"
             android:textColor="@color/background_color"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/text_terbaru"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Bisnis"
             android:textColor="@color/background_color"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/text_beritautama"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,7 +78,7 @@
             android:fontFamily="@font/playfairdisplaysemibold"
             android:text="Kesehatan"
             android:textColor="@color/background_color"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/text_bisnis"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
@@ -93,78 +93,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu">
 
-        <!--berita bapak sandiaga-->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewKepalaBerita"
-                android:layout_width="wrap_content"
+            <!--berita bapak sandiaga-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:padding="10dp">
 
-                <ImageView
-                    android:id="@+id/image_sandiaga"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewKepalaBerita"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/deskripsi"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_beritaprabowo" />
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:background="@color/background_color"
-                    android:orientation="vertical"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/judulBerita"
+                    <ImageView
+                        android:id="@+id/image_sandiaga"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/deskripsi"
-                        android:fontFamily="@font/playfairdisplayextrabold"
-                        android:text="Sandiaga Duduk Sebelah Prabowo di Istana, Janjian Ketemu Lagi"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_beritaprabowo" />
 
-                    <TextView
-                        android:id="@+id/deskripsiBerita"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
-                        android:fontFamily="@font/playfairdisplayregular"
-                        android:text="Newser - beberapa detik yang lalu"
-                        android:textColor="@color/white"
-                        android:textSize="5dp" />
+                        android:layout_gravity="bottom"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/judulBerita"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/deskripsi"
+                            android:fontFamily="@font/playfairdisplayextrabold"
+                            android:text="Sandiaga Duduk Sebelah Prabowo di Istana, Janjian Ketemu Lagi"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/deskripsiBerita"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:fontFamily="@font/playfairdisplayregular"
+                            android:text="Newser - beberapa detik yang lalu"
+                            android:textColor="@color/white"
+                            android:textSize="5sp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:id="@+id/recycleViewListBerita"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:listitem="@layout/activity_list_berita"
-                app:layout_constraintTop_toBottomOf="@+id/cardViewKepalaBerita"
-                tools:context=".MainActivity"/>
+                    </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleViewListBerita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardViewKepalaBerita"
+                    tools:context=".MainActivity"
+                    tools:listitem="@layout/activity_list_berita" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
