@@ -2,14 +2,10 @@ package org.d3if0052.newser
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
-//import kotlinx.android.synthetic.main.activity_list_berita.*
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
-import org.d3if0052.newser.databinding.ActivityMainBinding
-
 class HomePageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomePageBinding
@@ -18,21 +14,6 @@ class HomePageActivity : AppCompatActivity() {
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//    pencaharian
-//        val berita = arrayListOf(
-//            "Sandiaga Duduk Sebelah Prabowo di Istana, Janjian Ketemu Lagi.",
-//            "Polisi tangkap 21  tersangka narkoba di Bogor, sabu hingga 0bat keras disita.",
-//            "Salah satu pulau terpadat di dunia ternyata milik Indonesia.",
-//            "Tesla Cybertruck belum meluncur, kaum tajir Indonesia sudah antre mau beli.",
-//            "Potret Tanaman Bibit Cerdas yang Bantu Tingkatkan Hasil Panen di China.",
-//            "Aksi Protes Massal di Israel Berlanjut.",
-//            "Pesawat Kelima Pelita Air Sudah Datang, untuk Mudik 2023."
-//        )
-
-//        val beritaAdaptar : ArrayAdapter<String> = ArrayAdapter(
-//            this,android.R.layout.simple_list_item_1,
-//            berita
-//        )
         val beritaAdaptar = MainAdapter(getData())
 
         binding.recycleViewListBerita.adapter = beritaAdaptar;

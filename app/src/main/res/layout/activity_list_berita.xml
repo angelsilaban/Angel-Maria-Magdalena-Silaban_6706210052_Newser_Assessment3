@@ -30,11 +30,11 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:contentDescription="isi deskripsi"
-                    android:scaleType="fitCenter"
                     android:scrollbarAlwaysDrawHorizontalTrack="true"
                     android:src="@drawable/image_narkoba"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button" />
+                    app:layout_constraintTop_toBottomOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -48,7 +48,8 @@
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cardViewGambarBerita"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"/>
 
             <TextView
                 android:id="@+id/descTextView"
@@ -74,6 +75,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
