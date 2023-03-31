@@ -2,10 +2,14 @@ package org.d3if0052.newser
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.LinearLayout
 import android.widget.SearchView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
+
 class HomePageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomePageBinding
@@ -15,30 +19,40 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val beritaAdaptar = MainAdapter(getData())
+//        binding.recycleViewListBerita.adapter = beritaAdaptar;
 
-        binding.recycleViewListBerita.adapter = beritaAdaptar;
 
-        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 binding.search.clearFocus()
+                (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(query)
 
-                beritaAdaptar.filter.filter(query)
+                Log.wtf("AAAAAAA", "request: $query")
+                beritaAdaptar.updateList()
+
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                beritaAdaptar.filter.filter(newText)
+                (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(newText)
+
+                Log.wtf("AAAAAAA", "request: $newText")
+                beritaAdaptar.updateList()
+
+                if (newText!!.isEmpty() || newText.isBlank()) beritaAdaptar.resetList()
                 return false
             }
 
         })
 
         with(binding.recycleViewListBerita) {
-            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
-            adapter = MainAdapter(getData())
+//            addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
+            layoutManager = LinearLayoutManager(this@HomePageActivity)
+            adapter = beritaAdaptar
             setHasFixedSize(true)
         }
     }
+
     private fun getData(): ArrayList<Berita> {
         return arrayListOf(
             Berita(
@@ -65,7 +79,7 @@ class HomePageActivity : AppCompatActivity() {
                 R.drawable.image_tanamanbibitcerdas
             ),
 
-           Berita(
+            Berita(
                 "Aksi Protes Massal di Israel Berlanjut.",
                 "Newser -16 jam yang lalu",
                 R.drawable.image_protesisrael

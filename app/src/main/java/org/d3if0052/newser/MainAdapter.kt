@@ -1,5 +1,6 @@
 package org.d3if0052.newser
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -7,9 +8,29 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if0052.newser.databinding.ActivityListBeritaBinding
 
-class MainAdapter(private val data: ArrayList<Berita>) :
+class MainAdapter(private var data: ArrayList<Berita>) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>(), Filterable {
-    private var dataFiltered = arrayListOf<Berita>()
+    private var dataFiltered: ArrayList<Berita>? = null
+    private var tempList = arrayListOf<Berita>()
+
+    fun updateList() {
+        tempList.addAll(data)
+        Log.wtf("AAAAAA", "resetList: $tempList")
+
+        if (dataFiltered!!.isNotEmpty()) {
+            data.clear()
+            data.addAll(dataFiltered!!)
+        }
+    }
+
+    fun resetList() {
+        data.clear()
+
+        Log.wtf("AAAAAA", "resetList: $tempList")
+        data.addAll(tempList)
+
+//        dataFiltered!!.clear()
+    }
 
     class ViewHolder(
         private val binding: ActivityListBeritaBinding
@@ -19,7 +40,7 @@ class MainAdapter(private val data: ArrayList<Berita>) :
         fun bind(berita: Berita) = with(binding) {
             titleTextView.text = berita.title
             descTextView.text = berita.desc
-            imageView.setImageResource(berita.image)
+            imageNarkoba.setImageResource(berita.image)
         }
     }
 
@@ -40,24 +61,38 @@ class MainAdapter(private val data: ArrayList<Berita>) :
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val charString = constraint?.toString() ?: ""
+                val charString = constraint.toString().lowercase()
 
-                dataFiltered = if (charString.isEmpty()) data else {
-                    val filtered = arrayListOf<Berita>()
+                if (charString.isEmpty()) dataFiltered = data
+                else {
+                    data.let {
+                        val filtered = arrayListOf<Berita>()
 
-                    data.filter {
-                        (it.title.contains(constraint!!)) or (it.desc.contains(constraint))
-                    }.forEach { filtered.add(it) }
-                    filtered
+                        for (berita in data) {
+                            if (berita.title.lowercase()
+                                    .contains(charString) || berita.desc.lowercase()
+                                    .contains(charString)
+                            ) {
+                                filtered.add(berita)
+                            }
+                        }
+                        dataFiltered = filtered
+                    }
                 }
+                Log.wtf("AAAAAA", "performFiltering: $dataFiltered")
 
-                return FilterResults().apply { values = dataFiltered }
+                val res = FilterResults()
+                res.values = dataFiltered
+
+                return res
             }
 
             override fun publishResults(str: CharSequence?, filter: FilterResults?) {
                 dataFiltered =
                     if (filter?.values == null) arrayListOf()
                     else filter.values as ArrayList<Berita>
+
+                Log.wtf("test", "publishResults: $dataFiltered")
             }
 
         }
