@@ -13,6 +13,7 @@ class MainAdapter(private var data: ArrayList<Berita>) :
     private var dataFiltered: ArrayList<Berita>? = null
     private var tempList = arrayListOf<Berita>()
 
+    // mengupdate list
     fun updateList() {
         tempList.addAll(data)
         Log.wtf("AAAAAA", "resetList: $tempList")
@@ -23,15 +24,16 @@ class MainAdapter(private var data: ArrayList<Berita>) :
         }
     }
 
+    //mereset list
     fun resetList() {
         data.clear()
 
         Log.wtf("AAAAAA", "resetList: $tempList")
         data.addAll(tempList)
 
-//        dataFiltered!!.clear()
     }
 
+    //membuat class viewholder untuk menampilkan informasi yang ada di list_item
     class ViewHolder(
         private val binding: ActivityListBeritaBinding
     ) :
@@ -58,6 +60,7 @@ class MainAdapter(private var data: ArrayList<Berita>) :
         return data.size
     }
 
+    //melakukan menu searchView
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -86,7 +89,7 @@ class MainAdapter(private var data: ArrayList<Berita>) :
 
                 return res
             }
-
+            //untuk menampilkan hasil data dari searchView
             override fun publishResults(str: CharSequence?, filter: FilterResults?) {
                 dataFiltered =
                     if (filter?.values == null) arrayListOf()
