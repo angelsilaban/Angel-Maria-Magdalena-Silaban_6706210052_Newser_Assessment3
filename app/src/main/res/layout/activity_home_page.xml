@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_item"/>
+        app:menu="@menu/menu_item" />
 
     <LinearLayout
         android:id="@+id/menu"
@@ -83,84 +83,73 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-    <!--berita-->
-    <ScrollView
+    <!--berita bapak sandiaga-->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="8dp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu">
+        app:layout_constraintTop_toBottomOf="@id/menu">
 
-            <!--berita bapak sandiaga-->
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewKepalaBerita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image_sandiaga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/deskripsi"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/image_beritaprabowo" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/background_color"
+                android:orientation="vertical"
                 android:padding="10dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardViewKepalaBerita"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/image_sandiaga"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/deskripsi"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/image_beritaprabowo" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:background="@color/background_color"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <TextView
-                            android:id="@+id/judulBerita"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:contentDescription="@string/deskripsi"
-                            android:fontFamily="@font/playfairdisplayextrabold"
-                            android:text="Sandiaga Duduk Sebelah Prabowo di Istana, Janjian Ketemu Lagi"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-
-                        <TextView
-                            android:id="@+id/deskripsiBerita"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
-                            android:fontFamily="@font/playfairdisplayregular"
-                            android:text="Newser - beberapa detik yang lalu"
-                            android:textColor="@color/white"
-                            android:textSize="5sp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycleViewListBerita"
+                <TextView
+                    android:id="@+id/judulBerita"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardViewKepalaBerita"
-                    tools:context=".MainActivity"
-                    tools:listitem="@layout/activity_list_berita" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/deskripsi"
+                    android:fontFamily="@font/playfairdisplayextrabold"
+                    android:text="Sandiaga Duduk Sebelah Prabowo di Istana, Janjian Ketemu Lagi"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/deskripsiBerita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/playfairdisplayregular"
+                    android:text="Newser - beberapa detik yang lalu"
+                    android:textColor="@color/white"
+                    android:textSize="5sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBerita"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardViewKepalaBerita" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tombolNavigasi"
