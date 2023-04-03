@@ -22,8 +22,7 @@ class HomePageActivity : AppCompatActivity() {
         //melakukan pencarian data dan menghubungkan dengan class Main Adapter
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-
-                    (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(query)
+                (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(query)
 
                 Log.wtf("AAAAAAA", "request: $query")
                 beritaAdaptar.updateList()
@@ -35,7 +34,7 @@ class HomePageActivity : AppCompatActivity() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(newText)
 
-                Log.wtf("AAAAAAA", "request: $newText")
+                Log.wtf("Coba", "request: $newText")
                 beritaAdaptar.updateList()
 
                 if (newText!!.isEmpty() || newText.isBlank()) beritaAdaptar.resetList()
@@ -51,44 +50,45 @@ class HomePageActivity : AppCompatActivity() {
         }
 
     }
-            // membuat list data dengan arrayList
-            private fun getData(): ArrayList<Berita> {
-                return arrayListOf(
-                    Berita(
-                        "Polisi tangkap 21  tersangka narkoba di Bogor, sabu hingga 0bat keras disita.",
-                        "Newser - 3 jam yang lalu",
-                        R.drawable.image_narkoba
-                    ),
 
-                    Berita(
-                        "Salah satu pulau terpadat di dunia ternyata milik Indonesia.",
-                        "Newser - 5 jam yang lalu",
-                        R.drawable.image_pulau
-                    ),
+    // membuat list data dengan arrayList
+    private fun getData(): ArrayList<Berita> {
+        return arrayListOf(
+            Berita(
+                "Polisi tangkap 21  tersangka narkoba di Bogor, sabu hingga 0bat keras disita.",
+                "Newser - 3 jam yang lalu",
+                R.drawable.image_narkoba
+            ),
 
-                    Berita(
-                        "Tesla Cybertruck belum meluncur, kaum tajir Indonesia sudah antre mau beli.",
-                        "Newser - 9 jam yang lalu",
-                        R.drawable.image_tesla
-                    ),
+            Berita(
+                "Salah satu pulau terpadat di dunia ternyata milik Indonesia.",
+                "Newser - 5 jam yang lalu",
+                R.drawable.image_pulau
+            ),
 
-                    Berita(
-                        "Potret Tanaman Bibit Cerdas yang Bantu Tingkatkan Hasil Panen di China.",
-                        "Newser - 14 jam yang lalu",
-                        R.drawable.image_tanamanbibitcerdas
-                    ),
+            Berita(
+                "Tesla Cybertruck belum meluncur, kaum tajir Indonesia sudah antre mau beli.",
+                "Newser - 9 jam yang lalu",
+                R.drawable.image_tesla
+            ),
 
-                    Berita(
-                        "Aksi Protes Massal di Israel Berlanjut.",
-                        "Newser -16 jam yang lalu",
-                        R.drawable.image_protesisrael
-                    ),
+            Berita(
+                "Potret Tanaman Bibit Cerdas yang Bantu Tingkatkan Hasil Panen di China.",
+                "Newser - 14 jam yang lalu",
+                R.drawable.image_tanamanbibitcerdas
+            ),
 
-                    Berita(
-                        "Pesawat Kelima Pelita Air Sudah Datang, untuk Mudik 2023.",
-                        "Newser -18 jam yang lalu",
-                        R.drawable.image_pesawatpelitaair
-                    ),
-                )
-            }
-        }
+            Berita(
+                "Aksi Protes Massal di Israel Berlanjut.",
+                "Newser -16 jam yang lalu",
+                R.drawable.image_protesisrael
+            ),
+
+            Berita(
+                "Pesawat Kelima Pelita Air Sudah Datang, untuk Mudik 2023.",
+                "Newser -18 jam yang lalu",
+                R.drawable.image_pesawatpelitaair
+            ),
+        )
+    }
+}
