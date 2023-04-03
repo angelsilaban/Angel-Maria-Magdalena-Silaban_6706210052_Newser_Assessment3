@@ -22,10 +22,9 @@ class HomePageActivity : AppCompatActivity() {
         //melakukan pencarian data dan menghubungkan dengan class Main Adapter
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-//                binding.search.clearFocus()
-//                if (getData().contains(query)) {
+
                     (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(query)
-//                }
+
                 Log.wtf("AAAAAAA", "request: $query")
                 beritaAdaptar.updateList()
 
