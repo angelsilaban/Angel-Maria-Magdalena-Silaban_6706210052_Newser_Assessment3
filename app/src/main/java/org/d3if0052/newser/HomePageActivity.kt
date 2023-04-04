@@ -1,54 +1,73 @@
 package org.d3if0052.newser
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.SearchView
+import android.view.Menu
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
 import kotlin.collections.ArrayList
 
 class HomePageActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityHomePageBinding
+    private lateinit var beritaAdapter: MainAdapter
+    private lateinit var list: ArrayList<Berita>
+
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //memanggil class Adapter dengan data yang dimiliki
-        val beritaAdaptar = MainAdapter(getData())
+        list = ArrayList()
+        list.addAll(getData())
+        beritaAdapter = MainAdapter(list)
 
-        //melakukan pencarian data dan menghubungkan dengan class Main Adapter
-        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(query)
-
-                Log.wtf("AAAAAAA", "request: $query")
-                beritaAdaptar.updateList()
-
-                return false
-            }
-
-            //melakukan penghapusan data dan mereset list dan menghubungkan dengan class Main Adapter
-            override fun onQueryTextChange(newText: String?): Boolean {
-                (binding.recycleViewListBerita.adapter as MainAdapter).filter.filter(newText)
-
-                Log.wtf("Coba", "request: $newText")
-                beritaAdaptar.updateList()
-
-                if (newText!!.isEmpty() || newText.isBlank()) beritaAdaptar.resetList()
-                return false
-            }
-
-        })
-
-        with(binding.recycleViewListBerita) {
+        with(binding.rvBerita) {
             layoutManager = LinearLayoutManager(this@HomePageActivity)
-            adapter = beritaAdaptar
-            setHasFixedSize(true)
+            adapter = beritaAdapter
         }
 
+        beritaAdapter.run { notifyDataSetChanged() }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_item, menu)
+
+        val searchItem = menu.findItem(R.id.seacrch_view)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                filter(query)
+                return false
+            }
+        })
+
+        return true
+    }
+
+    private fun filter(query: String) {
+        val filteredList = arrayListOf<Berita>()
+
+        for (item in list)
+            if (item.title.lowercase().contains(query.lowercase())
+            ) filteredList.add(item)
+
+        if (filteredList.isEmpty()) Toast.makeText(
+            this,
+            "No data found!",
+            Toast.LENGTH_SHORT
+        ).show()
+        else beritaAdapter.filtering(filteredList)
     }
 
     // membuat list data dengan arrayList
@@ -88,7 +107,7 @@ class HomePageActivity : AppCompatActivity() {
                 "Pesawat Kelima Pelita Air Sudah Datang, untuk Mudik 2023.",
                 "Newser -18 jam yang lalu",
                 R.drawable.image_pesawatpelitaair
-            ),
+            )
         )
     }
 }

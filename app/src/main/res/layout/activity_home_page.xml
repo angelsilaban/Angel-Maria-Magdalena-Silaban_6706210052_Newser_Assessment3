@@ -6,29 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomePageActivity">
 
-    <!--search-->
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:iconifiedByDefault="false"
-        android:queryHint="Telusuri"
-        app:layout_constraintBottom_toTopOf="@+id/menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/menu_item" />
-
     <LinearLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search">
+        app:layout_constraintBottom_toTopOf="@+id/layoutberita">
 
         <!--text-Terbaru-->
         <TextView
@@ -85,6 +72,7 @@
 
     <!--berita bapak sandiaga-->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutberita"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
@@ -97,17 +85,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/image_sandiaga"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/deskripsi"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/image_beritaprabowo" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22000003">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,6 +98,14 @@
                 android:background="@color/background_color"
                 android:orientation="vertical"
                 android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/image_sandiaga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/deskripsi"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_beritaprabowo" />
 
                 <TextView
                     android:id="@+id/judulBerita"
@@ -142,13 +132,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvBerita"
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="324dp"
+            android:layout_marginBottom="48dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardViewKepalaBerita" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
