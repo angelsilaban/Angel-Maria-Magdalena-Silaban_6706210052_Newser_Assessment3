@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Newser</string>
     <string name="deskripsi">Sandiaga Uno bersama dengann Prabowo</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_lihat_berita">Polisi tangkap 21 tersangka narkoba di Bogor, sabu hingga 0bat keras disita.</string>
+    <string name="desc_lihat_berita"><b>Bogor </b>- Satnarkoba Polresta Bogor menangkap 21 orang terkait kasus narkoba dalam kurun waktu sebulan terakhir. Barang bukti narkoba berupa sabu, ganja, hingga obat keras terlarang disita."Terkait pengungkapan kasus narkotika dengan jumlah tersangka sebanyak 21 orang tersangka, ini hasil pengungkapan dalam kurun waktu 1 bulan sampai dengan 27 Maret 2023," kata Kapolresta Bogor Kota Kombes Bismo Teguh Prakoso.
+    </string>
+    <string name="selengkapnya">Selengkapnya ></string>
+    <string name="about_1">Penulis : Angel Silaban</string>
+    <string name="about_2">Editor : Diri sendiri</string>
 </resources>

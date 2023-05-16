@@ -1,10 +1,11 @@
-package org.d3if0052.newser
+package org.d3if0052.newser.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if0052.newser.databinding.ActivityListBeritaBinding
+import org.d3if0052.newser.model.Berita
 
 class MainAdapter(private var data: MutableList<Berita>) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
