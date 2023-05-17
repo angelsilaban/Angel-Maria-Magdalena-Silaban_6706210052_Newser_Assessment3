@@ -63,8 +63,17 @@
                     android:textColor="@color/white"
                     android:textSize="5sp" />
 
-            </LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/selengkapnya"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/playfairdisplayitalic"
+                    android:backgroundTint="@color/white"/>
 
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -73,11 +82,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="60dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="260dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/activity_list_berita"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_ih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_color"
+        android:src="@drawable/ic_add_comment"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        app:tint="@color/white" />
 
 </FrameLayout>
