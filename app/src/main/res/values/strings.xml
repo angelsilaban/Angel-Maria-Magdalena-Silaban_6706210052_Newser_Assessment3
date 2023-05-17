@@ -8,4 +8,10 @@
     <string name="selengkapnya">Selengkapnya ></string>
     <string name="about_1">Penulis : Angel Silaban</string>
     <string name="about_2">Editor : Diri sendiri</string>
+    <string name="terbaru">Terbaru</string>
+    <string name="nasional">Nasional</string>
+    <string name="internasional">Internasional</string>
+    <string name="olahraga">Olahraga</string>
+    <string name="ekonomi">Ekonomi</string>
+    <string name="bagikan_template">Lihat berita selanjutnya ke portal CNN</string>
 </resources>
