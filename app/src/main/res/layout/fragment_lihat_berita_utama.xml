@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.LihatBeritaUtamaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_arrow_back"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/app_name"
+                android:textSize="22sp"
+                android:textColor="@color/background_color"
+                android:fontFamily="@font/playfairdisplaybold"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/image_beritaprabowo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_berita_utama"
+            android:fontFamily="@font/playfairdisplaybold"
+            android:textSize="25sp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="5dp"
+                android:background="@drawable/ic_history"
+                android:backgroundTint="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="18/05/2023"
+                android:textColor="@color/black"
+                android:fontFamily="@font/playfairdisplaymedium"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/desc_berita_utama"
+            android:textColor="@color/black"
+            android:fontFamily="@font/playfairdisplayregular"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/button_selengkapnya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selengkapnya"
+            android:fontFamily="@font/playfairdisplayregular"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/about_1"
+            android:fontFamily="@font/playfairdisplayitalic"
+            android:textSize="10sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/about_2"
+            android:fontFamily="@font/playfairdisplayitalic"
+            android:textSize="10sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -14,9 +14,9 @@
         android:icon="@drawable/ic_category"
         android:title="Categories"/>
     <item
-        android:id="@+id/ic_history"
+        android:id="@+id/ic_search"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_history"
-        android:title="History"/>
+        android:icon="@drawable/ic_search"
+        android:title="Search"/>
 </menu>
