@@ -6,6 +6,7 @@
 \nUntuk diketahui, pembayaran zakat mal ke Baznas berlangsung di Istana Merdeka, Jakarta Pusat, Selasa (28/3/2023). Presiden Jokowi dan Wapres Maruf Amin beserta jajaran kabinet membayar zakat di lokasi.
     </string>
     <string name="selengkapnya">Selengkapnya ></string>
+    <string name="share">Bagikan Berita</string>
     <string name="about_1">Penulis : Angel Silaban</string>
     <string name="about_2">Editor : Park Chanyeol</string>
     <string name="terbaru">Terbaru</string>
@@ -13,5 +14,5 @@
     <string name="internasional">Internasional</string>
     <string name="olahraga">Olahraga</string>
     <string name="ekonomi">Ekonomi</string>
-    <string name="bagikan_template">Lihat berita selanjutnya ke portal CNN</string>
+    <string name="bagikan_berita">Bagikan berita</string>
 </resources>

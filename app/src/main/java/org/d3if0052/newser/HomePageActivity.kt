@@ -2,6 +2,10 @@ package org.d3if0052.newser
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
 import org.d3if0052.newser.fragment.CategoriesFragment
@@ -43,6 +47,33 @@ class HomePageActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.content,fragment)
         fragmentTransaction.commit()
+    }
+
+    fun showUpButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    fun hideUpButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+    }
+
+    fun clickUpButton() {
+
+        addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                return
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    android.R.id.home -> {
+                        supportFragmentManager.popBackStack()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        })
     }
 }
 

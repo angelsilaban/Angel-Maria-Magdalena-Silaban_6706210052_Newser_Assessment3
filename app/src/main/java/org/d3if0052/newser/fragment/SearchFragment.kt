@@ -30,36 +30,36 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
-    private fun filter(query: String) {
-        val filteredList = arrayListOf<String>()
+//    private fun filter(query: String) {
+//        val filteredList = arrayListOf<String>()
+//
+//        for (item in list)
+//            if (item.lowercase().contains(query.lowercase())
+//            ) filteredList.add(item)
+//
+//        if (filteredList.isEmpty()) Toast.makeText(
+//            requireContext(),
+//            "No data found!",
+//            Toast.LENGTH_SHORT
+//        ).show()
+//        else beritaAdapter.filtering(filteredList)
+//    }
 
-        for (item in list)
-            if (item.lowercase().contains(query.lowercase())
-            ) filteredList.add(item)
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        inflater.inflate(R.menu.menu_item, menu)
+//
+//        val searchItem = menu.findItem(R.id.search_view)
+//        val searchView = searchItem.actionView as SearchView
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String): Boolean {
+//                return false
+//            }
 
-        if (filteredList.isEmpty()) Toast.makeText(
-            requireContext(),
-            "No data found!",
-            Toast.LENGTH_SHORT
-        ).show()
-        else beritaAdapter.filtering(filteredList)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_item, menu)
-
-        val searchItem = menu.findItem(R.id.search_view)
-        val searchView = searchItem.actionView as SearchView
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(query: String): Boolean {
-                filter(query)
-                return false
-            }
-        })
-    }
+//            override fun onQueryTextChange(query: String): Boolean {
+//                filter(query)
+//                return false
+//            }
+//        })
+//    }
 }
