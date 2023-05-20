@@ -24,7 +24,6 @@ class LihatBeritaUtamaFragment : Fragment() {
     ): View? {
         binding = FragmentLihatBeritaUtamaBinding.inflate(layoutInflater, container, false)
         return binding.root
-        binding.btnShareBerita.setOnClickListener {shareBerita() }
 
     }
 
@@ -32,6 +31,8 @@ class LihatBeritaUtamaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as HomePageActivity).showUpButton()
         (activity as HomePageActivity).clickUpButton()
+
+        binding.btnShareBerita.setOnClickListener {shareBerita() }
     }
 
     //intent ke portal berita
@@ -43,7 +44,9 @@ class LihatBeritaUtamaFragment : Fragment() {
         shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
         if (shareIntent.resolveActivity(
                 requireActivity().packageManager) != null) {
-                    startActivity(Intent.createChooser(shareIntent, "share to "))
+//                    startActivity(Intent.createChooser(shareIntent, "share to "))
+            startActivity(shareIntent)
+
         }
     }
 

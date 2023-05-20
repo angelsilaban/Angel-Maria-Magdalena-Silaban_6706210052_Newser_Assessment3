@@ -1,18 +1,15 @@
 package org.d3if0052.newser.fragment
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.d3if0052.newser.HomePageActivity
 import org.d3if0052.newser.R
-import org.d3if0052.newser.adapter.MainAdapter
+import org.d3if0052.newser.ui.main.MainAdapter
 import org.d3if0052.newser.databinding.FragmentHomeBinding
 import org.d3if0052.newser.model.Berita
 
@@ -21,7 +18,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var beritaAdapter: MainAdapter
     private lateinit var list: ArrayList<Berita>
-    lateinit var button_lihat_berita:Button
 
     override fun onCreateView(
         inflater: LayoutInflater,

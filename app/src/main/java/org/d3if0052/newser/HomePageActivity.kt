@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
 import org.d3if0052.newser.fragment.CategoriesFragment
 import org.d3if0052.newser.fragment.HomeFragment
-import org.d3if0052.newser.fragment.SearchFragment
+import org.d3if0052.newser.ui.main.SearchFragment
 
 
 class HomePageActivity : AppCompatActivity() {
