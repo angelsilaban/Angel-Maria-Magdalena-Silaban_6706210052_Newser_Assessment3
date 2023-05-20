@@ -1,14 +1,20 @@
-package org.d3if0052.newser.adapter
+package org.d3if0052.newser.ui.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if0052.newser.databinding.ActivityListBeritaBinding
 import org.d3if0052.newser.model.Berita
 
 class MainAdapter(private var data: MutableList<Berita>) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+    fun updateData(newData: ArrayList<Berita>) {
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(
         private val binding: ActivityListBeritaBinding
