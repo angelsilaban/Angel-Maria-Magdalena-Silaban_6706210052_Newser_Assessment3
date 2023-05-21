@@ -9,5 +9,5 @@ data class News(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var tanggal: Long = System.currentTimeMillis(),
-    val judul: String?
+    val judul: String
 )

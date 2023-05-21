@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [News::class], version = 2, exportSchema = false)
 
 abstract class NewsDatabase : RoomDatabase() {
-    abstract fun newsDao() : NewsDao
+    abstract val newsDao : NewsDao
 
     companion object {
         @Volatile

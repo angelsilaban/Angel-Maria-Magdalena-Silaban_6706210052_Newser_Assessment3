@@ -11,5 +11,6 @@ class HistoryViewModelFactory( private val db: NewsDao
             if (modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
                 return HistoryViewModel(db) as T
             }
-            throw IllegalArgumentException("Unknown ViewModel class") }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
     }

@@ -9,7 +9,9 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import org.d3if0052.newser.databinding.ActivityHomePageBinding
 import org.d3if0052.newser.fragment.CategoriesFragment
+import org.d3if0052.newser.requestberita.FragmentRequestBerita
 import org.d3if0052.newser.fragment.HomeFragment
+import org.d3if0052.newser.ui.main.history.HistoriFragment
 
 
 class HomePageActivity : AppCompatActivity() {
@@ -29,7 +31,8 @@ class HomePageActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.ic_beranda -> addFragment(HomeFragment())
                 R.id.ic_categories -> addFragment(CategoriesFragment())
-                R.id.ic_request_comment -> addFragment(RequestBeritaFragment())
+                R.id.ic_request_comment -> addFragment(FragmentRequestBerita())
+                R.id.ic_history -> addFragment(HistoriFragment())
 
                 else->{
 

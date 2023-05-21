@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historiFragment"
+            app:destination="@id/historiFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -27,11 +30,17 @@
         tools:layout="@layout/fragment_categories" />
     <fragment
         android:id="@+id/requestBeritaFragment"
-        android:name="org.d3if0052.newser.fragment.FragmentRequestBerita"
-        android:label="RequestBeritaFragment" />
+        android:name="org.d3if0052.newser.requestberita.FragmentRequestBerita"
+        android:label="RequestBeritaFragment" >
+
+    </fragment>
     <fragment
         android:id="@+id/lihatBeritaUtamaFragment"
         android:name="org.d3if0052.newser.fragment.LihatBeritaUtamaFragment"
         android:label="fragment_lihat_berita_utama"
         tools:layout="@layout/fragment_lihat_berita_utama" />
+    <fragment
+        android:id="@+id/historiFragment"
+        android:name="org.d3if0052.newser.ui.main.history.HistoriFragment"
+        android:label="HistoriFragment" />
 </navigation>
