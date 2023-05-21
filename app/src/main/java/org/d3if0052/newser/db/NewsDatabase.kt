@@ -4,26 +4,29 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import org.d3if0052.newser.db.dao.NewsDao
-import org.d3if0052.newser.db.entity.News
 
-@Database(entities = [News::class], version = 1)
+@Database(entities = [News::class], version = 2, exportSchema = false)
 
 abstract class NewsDatabase : RoomDatabase() {
     abstract fun newsDao() : NewsDao
 
     companion object {
-        private var instance: NewsDatabase? = null
+        @Volatile
+        private var INSTANCE: NewsDatabase? = null
 
         fun getInstance(context: Context): NewsDatabase {
-            if(instance== null) {
-                instance = Room.databaseBuilder(context, NewsDatabase::class.java, "news-database")
-                    .fallbackToDestructiveMigration()
-                    .allowMainThreadQueries()
-                    .build()
-            }
-
-            return instance!!
+            synchronized(this) {
+                var instance = INSTANCE
+                if (instance == null) {
+                    instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        NewsDatabase::class.java,
+                        "news.db"
+                    ).fallbackToDestructiveMigration().build()
+                    INSTANCE = instance
+                }
+                return instance
         }
     }
+}
 }

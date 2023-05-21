@@ -14,9 +14,9 @@
         android:icon="@drawable/ic_category"
         android:title="Categories"/>
     <item
-        android:id="@+id/ic_search"
+        android:id="@+id/ic_request_comment"
         android:enabled="true"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_search"
-        android:title="Search"/>
+        android:icon="@drawable/ic_add_comment"
+        android:title="Request News"/>
 </menu>

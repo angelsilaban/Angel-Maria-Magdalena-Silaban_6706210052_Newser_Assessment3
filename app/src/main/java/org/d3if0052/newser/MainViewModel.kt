@@ -3,10 +3,11 @@ package org.d3if0052.newser
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import org.d3if0052.newser.db.dao.NewsDao
+import androidx.lifecycle.ViewModelProvider
+import org.d3if0052.newser.db.NewsDao
 import org.d3if0052.newser.model.Berita
 
-class SearchViewModel (db:NewsDao) : ViewModel() {
+class MainViewModel (db: NewsDao) : ViewModel() {
 //    val data = db.getAll()
     private var data = MutableLiveData<ArrayList<Berita>>()
 
@@ -42,4 +43,15 @@ class SearchViewModel (db:NewsDao) : ViewModel() {
         )
     }
     fun getData(): LiveData<ArrayList<Berita>> = data
+}
+
+class MainViewModelFactory(
+    private val db: NewsDao
+) : ViewModelProvider.Factory {
+    @Suppress("unchecked_cast")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
+            return MainViewModel(db) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class") }
 }

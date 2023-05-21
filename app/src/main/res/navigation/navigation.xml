@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.d3if0052.newser.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_lihatBeritaUtamaFragment"
+            app:destination="@id/lihatBeritaUtamaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_requestBeritaFragment"
+            app:destination="@id/requestBeritaFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="org.d3if0052.newser.fragment.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/requestBeritaFragment"
+        android:name="org.d3if0052.newser.fragment.FragmentRequestBerita"
+        android:label="RequestBeritaFragment" />
+    <fragment
+        android:id="@+id/lihatBeritaUtamaFragment"
+        android:name="org.d3if0052.newser.fragment.LihatBeritaUtamaFragment"
+        android:label="fragment_lihat_berita_utama"
+        tools:layout="@layout/fragment_lihat_berita_utama" />
+</navigation>

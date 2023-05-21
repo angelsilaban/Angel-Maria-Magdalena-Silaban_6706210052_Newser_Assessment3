@@ -15,4 +15,11 @@
     <string name="olahraga">Olahraga</string>
     <string name="ekonomi">Ekonomi</string>
     <string name="bagikan_berita">Bagikan berita</string>
+    <string name="hapus_history">Hapus History</string>
+    <string name="konfirmasi_hapus">Hapus semua histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
+    <string name="grid">Ubah tampilan</string>
+    <string name="noting_data">Tidak ada data</string>
+    <string name="data">Saya Istri Mas Chakra</string>
 </resources>
