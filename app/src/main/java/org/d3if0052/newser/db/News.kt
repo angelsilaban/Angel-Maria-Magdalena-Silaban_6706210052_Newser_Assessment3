@@ -1,6 +1,5 @@
 package org.d3if0052.newser.db
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

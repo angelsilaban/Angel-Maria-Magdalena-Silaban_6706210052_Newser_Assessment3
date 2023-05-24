@@ -11,7 +11,7 @@ import org.d3if0052.newser.databinding.ActivityHomePageBinding
 import org.d3if0052.newser.fragment.CategoriesFragment
 import org.d3if0052.newser.requestberita.FragmentRequestBerita
 import org.d3if0052.newser.fragment.HomeFragment
-import org.d3if0052.newser.ui.main.history.HistoriFragment
+import org.d3if0052.newser.ui.main.history.HistoryFragment
 
 
 class HomePageActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class HomePageActivity : AppCompatActivity() {
                 R.id.ic_beranda -> addFragment(HomeFragment())
                 R.id.ic_categories -> addFragment(CategoriesFragment())
                 R.id.ic_request_comment -> addFragment(FragmentRequestBerita())
-                R.id.ic_history -> addFragment(HistoriFragment())
+                R.id.ic_history -> addFragment(HistoryFragment())
 
                 else->{
 

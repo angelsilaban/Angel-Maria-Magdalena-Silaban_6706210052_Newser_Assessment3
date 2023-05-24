@@ -20,8 +20,8 @@
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_historiFragment"
-            app:destination="@id/historiFragment" />
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
@@ -40,7 +40,7 @@
         android:label="fragment_lihat_berita_utama"
         tools:layout="@layout/fragment_lihat_berita_utama" />
     <fragment
-        android:id="@+id/historiFragment"
+        android:id="@+id/historyFragment"
         android:name="org.d3if0052.newser.ui.main.history.HistoriFragment"
         android:label="HistoriFragment" />
 </navigation>

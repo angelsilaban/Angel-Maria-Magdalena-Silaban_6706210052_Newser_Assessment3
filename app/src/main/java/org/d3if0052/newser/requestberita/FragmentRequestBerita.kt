@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -30,21 +31,29 @@ class FragmentRequestBerita : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRequestBeritaBinding.inflate(layoutInflater, container, false)
+
+//        binding.apply {
+//            next.setOnClickListener{
+//                namaInput.text.toString()
+//            }
+//        }
+
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.namaInput.setOnClickListener {
+//        binding.namaInput.setOnClickListener {
+//            val judul = binding.namaInput.text.toString()
+//            viewModel.getData(judul)
+//        }
+        binding.next.setOnClickListener {
             val judul = binding.namaInput.text.toString()
             viewModel.getData(judul)
+//            findNavController().navigate(
+//                R.id.action_homeFragment_to_historyFragment)
         }
-            binding.next.setOnClickListener {
-                findNavController().navigate(
-                    R.id.action_homeFragment_to_historiFragment)
-            }
         }
-
-
     }
 
 

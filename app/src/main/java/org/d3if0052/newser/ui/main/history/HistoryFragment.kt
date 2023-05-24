@@ -11,7 +11,7 @@ import org.d3if0052.newser.R
 import org.d3if0052.newser.databinding.FragmentHistoryBinding
 import org.d3if0052.newser.db.NewsDatabase
 
-class HistoriFragment : Fragment() {
+class HistoryFragment : Fragment() {
     private val viewModel: HistoryViewModel by lazy {
         val db = NewsDatabase.getInstance(requireContext())
         val factory = HistoryViewModelFactory(db.newsDao)

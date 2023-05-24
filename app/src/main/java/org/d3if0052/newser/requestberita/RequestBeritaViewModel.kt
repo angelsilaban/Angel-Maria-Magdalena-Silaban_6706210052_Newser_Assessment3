@@ -13,7 +13,7 @@ class RequestBeritaViewModel(private val db: NewsDao) : ViewModel() {
 
     fun getData(judul: String) {
         val dataNews = News(judul = judul)
-        newsLiveData.value = dataNews
+        newsLiveData.value = dataNews.ambilData()
 
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
@@ -22,16 +22,12 @@ class RequestBeritaViewModel(private val db: NewsDao) : ViewModel() {
         }
     }
 
-    fun getHasilNews(): LiveData<News?> = newsLiveData
-}
+    fun News.ambilData() : News{
+        val id = id
+        val tanggal = tanggal
+        val judul = judul
+        return News(id, tanggal,judul)
+    }
 
-class RequestBeritaViewModelFactory(
-    private val db: NewsDao
-) : ViewModelProvider.Factory {
-    @Suppress("unchecked_cast")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(RequestBeritaViewModel::class.java)) {
-            return RequestBeritaViewModel(db) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class") }
+    fun getHasilNews(): LiveData<News?> = newsLiveData
 }
