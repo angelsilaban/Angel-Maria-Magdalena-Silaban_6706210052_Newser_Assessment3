@@ -46,11 +46,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
         (activity as AppCompatActivity).supportActionBar?.title = "Newser"
         (activity as HomePageActivity).hideUpButton()
 
-//        binding.addComment.setOnClickListener {
-//            findNavController().navigate(
-//                R.id.action_homeFragment_to_requestBeritaFragment)
-//        }
-
         val buttonLihatBerita: Button = view.findViewById(R.id.button_lihat_berita)
 
         buttonLihatBerita.setOnClickListener(this)

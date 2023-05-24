@@ -44,7 +44,6 @@ class LihatBeritaUtamaFragment : Fragment() {
         shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
         if (shareIntent.resolveActivity(
                 requireActivity().packageManager) != null) {
-//                    startActivity(Intent.createChooser(shareIntent, "share to "))
             startActivity(shareIntent)
 
         }

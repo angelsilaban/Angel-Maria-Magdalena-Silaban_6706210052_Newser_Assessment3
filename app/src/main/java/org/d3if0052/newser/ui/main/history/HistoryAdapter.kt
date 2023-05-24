@@ -35,7 +35,7 @@ class HistoryAdapter : ListAdapter<News, HistoryAdapter.ViewHolder>(DIFF_CALLBAC
 
         fun bind(item: News) {
             binding.tanggaltv.text = dateFormatter.format(Date(item.tanggal))
-            binding.kategoritv.text = item.judul
+            binding.judultv.text = item.judul
         }
     }
 

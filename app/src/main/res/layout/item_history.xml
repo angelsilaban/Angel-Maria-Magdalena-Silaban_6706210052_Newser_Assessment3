@@ -6,31 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <TextView
-        android:id="@+id/tanggaltv"
+        android:id="@+id/judultv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/kategoritv"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="22 Desember 2022" />
+        tools:text="Yang paling disayang Angel : Tuhan pastinya, orang tua dan keluarga, dan Park Chanyeol"
+        android:textColor="@color/black"
+        android:fontFamily="@font/playfairdisplaybold"/>
 
     <TextView
-        android:id="@+id/kategoritv"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/tanggaltv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/judultv"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="W" />
+        tools:text="22 Desember 2022"
+        android:textColor="@color/black"
+        android:fontFamily="@font/playfairdisplayitalic"/>
 
 
     <TextView
@@ -44,4 +47,5 @@
         app:layout_constraintStart_toStartOf="@+id/tanggaltv"
         app:layout_constraintTop_toBottomOf="@+id/tanggaltv"
         tools:text="" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
