@@ -37,7 +37,6 @@ class HomeFragment : Fragment(), View.OnClickListener {
         beritaAdapter = MainAdapter()
 
         with(binding.rvBerita) {
-//            layoutManager = LinearLayoutManager(requireContext())
                 addItemDecoration(
                     DividerItemDecoration(
                         context,
@@ -117,5 +116,4 @@ class HomeFragment : Fragment(), View.OnClickListener {
         Log.i("HomeFragment", "onDestroy dijalankan")
         super.onDestroy()
     }
-
 }
