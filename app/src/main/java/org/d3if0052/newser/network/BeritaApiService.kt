@@ -17,12 +17,10 @@ private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()
-
 interface BeritaApiService {
     @GET("berita.json")
     suspend fun getBerita(): ArrayList<Berita>
 }
-
 object BeritaApi {
     val service: BeritaApiService by lazy {
         retrofit.create(BeritaApiService::class.java)
@@ -30,4 +28,5 @@ object BeritaApi {
     fun getBeritaUrl(image: String): String {
         return "$BASE_URL$image"
     }
+    enum class ApiStatus { LOADING, SUCCESS, FAILED }
 }

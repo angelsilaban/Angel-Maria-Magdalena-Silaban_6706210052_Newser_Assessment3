@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.d3if0052.newser.R
@@ -12,8 +11,8 @@ import org.d3if0052.newser.databinding.ActivityListBeritaBinding
 import org.d3if0052.newser.model.Berita
 import org.d3if0052.newser.network.BeritaApi
 
-class MainAdapter(private var data: MutableList<Berita>) :
-    RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+    private var data = mutableListOf<Berita>()
     fun updateData(newData: ArrayList<Berita>) {
         data.clear()
         data.addAll(newData)
@@ -27,9 +26,6 @@ class MainAdapter(private var data: MutableList<Berita>) :
         fun bind(berita: Berita) = with(binding) {
             titleTextView.text = berita.title
             descTextView.text = berita.desc
-
-            imageNarkoba.setImageResource(R.drawable.image_narkoba)
-
             Glide.with(imageNarkoba.context)
                 .load(BeritaApi.getBeritaUrl(berita.image))
                 .error(R.drawable.ic_baseline_broken_image_24)
@@ -38,7 +34,6 @@ class MainAdapter(private var data: MutableList<Berita>) :
             root.setOnClickListener {
                 Toast.makeText(root.context, berita.title, Toast.LENGTH_LONG).show()
             }
-
         }
     }
 
