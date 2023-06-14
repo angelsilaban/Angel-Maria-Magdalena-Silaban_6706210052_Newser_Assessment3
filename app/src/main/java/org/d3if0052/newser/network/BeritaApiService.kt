@@ -27,4 +27,7 @@ object BeritaApi {
     val service: BeritaApiService by lazy {
         retrofit.create(BeritaApiService::class.java)
     }
+    fun getBeritaUrl(image: String): String {
+        return "$BASE_URL$image"
+    }
 }
