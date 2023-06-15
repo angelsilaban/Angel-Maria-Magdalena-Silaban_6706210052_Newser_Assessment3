@@ -1,11 +1,16 @@
 package org.d3if0052.newser.fragment
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Button
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -78,6 +83,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
             }
             ApiStatus.SUCCESS -> {
                 binding.progressBar.visibility = View.GONE
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    requestNotificationPermission()
+                }
+
             }
             ApiStatus.FAILED -> {
                 binding.progressBar.visibility = View.GONE
@@ -94,6 +104,21 @@ class HomeFragment : Fragment(), View.OnClickListener {
                     .addToBackStack(null)
                     .commit()
             }
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun requestNotificationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                HomePageActivity.PERMISSION_REQUEST_CODE
+            )
         }
     }
 }

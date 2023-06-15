@@ -21,6 +21,7 @@ import org.d3if0052.newser.ui.main.history.HistoryFragment
 class HomePageActivity : AppCompatActivity() {
     companion object {
         const val CHANNEL_ID = "updater"
+        const val PERMISSION_REQUEST_CODE = 1
     }
 
     private lateinit var  binding : ActivityHomePageBinding
