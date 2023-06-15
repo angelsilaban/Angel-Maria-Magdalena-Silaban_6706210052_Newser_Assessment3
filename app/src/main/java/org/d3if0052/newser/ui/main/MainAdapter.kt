@@ -11,9 +11,10 @@ import org.d3if0052.newser.databinding.ActivityListBeritaBinding
 import org.d3if0052.newser.model.Berita
 import org.d3if0052.newser.network.BeritaApi
 
+@SuppressLint("NotifyDataSetChanged")
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
-    private var data = mutableListOf<Berita>()
-    fun updateData(newData: ArrayList<Berita>) {
+    private var data = arrayListOf<Berita>()
+    fun updateData(newData: List<Berita>) {
         data.clear()
         data.addAll(newData)
         notifyDataSetChanged()
@@ -26,6 +27,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         fun bind(berita: Berita) = with(binding) {
             titleTextView.text = berita.title
             descTextView.text = berita.desc
+
             Glide.with(imageNarkoba.context)
                 .load(BeritaApi.getBeritaUrl(berita.image))
                 .error(R.drawable.ic_baseline_broken_image_24)

@@ -14,6 +14,7 @@ import org.d3if0052.newser.HomePageActivity
 import org.d3if0052.newser.MainViewModel
 import org.d3if0052.newser.R
 import org.d3if0052.newser.databinding.FragmentHomeBinding
+import org.d3if0052.newser.network.ApiStatus
 import org.d3if0052.newser.network.BeritaApi
 import org.d3if0052.newser.ui.main.MainAdapter
 
@@ -31,21 +32,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-
-        Log.i("HomeFragment", "onCreate dijalankan")
-
         beritaAdapter = MainAdapter()
-
-        with(binding.rvBerita) {
-                addItemDecoration(
-                    DividerItemDecoration(
-                        context,
-                        RecyclerView.VERTICAL
-                    )
-                )
-            adapter = beritaAdapter
-            setHasFixedSize(true)
-        }
 
         beritaAdapter.run { notifyDataSetChanged() }
         return binding.root
@@ -56,11 +43,25 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         viewModel.getData().observe(viewLifecycleOwner) {
             beritaAdapter.updateData(it)
+
+            with(binding.rvBerita) {
+                addItemDecoration(
+                    DividerItemDecoration(
+                        context,
+                        RecyclerView.VERTICAL
+                    )
+                )
+
+                adapter = beritaAdapter
+                setHasFixedSize(true)
+            }
         }
 
         viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
         }
+
+        viewModel.scheduleUpdater(requireActivity().application)
 
         (activity as AppCompatActivity).supportActionBar?.title = "Newser"
         (activity as HomePageActivity).hideUpButton()
@@ -70,15 +71,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
         buttonLihatBerita.setOnClickListener(this)
     }
 
-    private fun updateProgress(status: BeritaApi.ApiStatus) {
+    private fun updateProgress(status: ApiStatus) {
         when (status) {
-            BeritaApi.ApiStatus.LOADING -> {
+            ApiStatus.LOADING -> {
                 binding.progressBar.visibility = View.VISIBLE
             }
-            BeritaApi.ApiStatus.SUCCESS -> {
+            ApiStatus.SUCCESS -> {
                 binding.progressBar.visibility = View.GONE
             }
-            BeritaApi.ApiStatus.FAILED -> {
+            ApiStatus.FAILED -> {
                 binding.progressBar.visibility = View.GONE
                 binding.networkError.visibility = View.VISIBLE
             }
@@ -94,26 +95,5 @@ class HomeFragment : Fragment(), View.OnClickListener {
                     .commit()
             }
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i("HomeFragment", "onStart dijalankan")
-    }
-    override fun onResume() {
-        super.onResume()
-        Log.i("HomeFragment", "onResume dijalankan")
-    }
-    override fun onPause() {
-        Log.i("HomeFragment", "onPause dijalankan")
-        super.onPause()
-    }
-    override fun onStop() {
-        Log.i("HomeFragment", "onStop dijalankan")
-        super.onStop()
-    }
-    override fun onDestroy() {
-        Log.i("HomeFragment", "onDestroy dijalankan")
-        super.onDestroy()
     }
 }
